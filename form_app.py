@@ -81,7 +81,7 @@ if not st.session_state.userResponse:
 	password = form.text_input('Enter password',type='password')
 	if form.form_submit_button('Submit'):
 		st.session_state.userResponse = {'username':user,
-								 		 'gender':gender,
-								 		 'birth_date':birth_date.strftime('%Y/%m/%d'),
-								 		 'key':password+user}
+						'gender':gender,
+						'birth_date':birth_date.strftime('%Y/%m/%d'),
+						'key':password+user}
 		st.experimental_rerun()

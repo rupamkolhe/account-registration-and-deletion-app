@@ -2,8 +2,8 @@
 from deta import Deta 
 import streamlit as st 
 
-projectName = 'founder_and_company'
-projectKey = 'd0ukiwvv_mYpXN68ojUTSAha9eYbJqN7qRKx3fSLZ'
+projectName = 'your_project_name'
+projectKey = 'your_project_key'
 
 deta = Deta(projectKey)
 db = deta.Base('simpleDB')
@@ -82,6 +82,6 @@ if not st.session_state.userResponse:
 	if form.form_submit_button('Submit'):
 		st.session_state.userResponse = {'username':user,
 								 		 'gender':gender,
-								 		 'birth_date':str(birth_date.today()),
+								 		 'birth_date':birth_date.strftime('%Y/%m/%d'),
 								 		 'key':password+user}
 		st.experimental_rerun()
